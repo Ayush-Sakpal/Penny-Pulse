@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".StatementFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/downloadStatementTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="17dp"
+            android:text="Download Statement"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="27dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/statementFormCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginVertical="27dp"
+
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="11dp"
+            android:elevation="27dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/emailTextViewStatementForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Address*"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <EditText
+                        android:id="@+id/emailEditTextStatementForm"
+                        android:padding="11dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textSize="14dp"
+                        android:inputType="textEmailAddress"
+                        android:background="@drawable/edit_text_border"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/durationTextViewStatementForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/durationEditTextStatementForm"
+                            android:padding="11dp"
+                            android:layout_width="270dp"
+                            android:layout_height="49dp"
+                            android:text="Selected Date"
+                            android:fontFamily="@font/montserratregular"
+                            android:textSize="14dp"
+                            android:inputType="date"
+                            android:background="@drawable/edit_text_border"/>
+
+                        <ImageButton
+                            android:id="@+id/durationPickerButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/datepicker_button_icon"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_toEndOf="@id/durationEditTextStatementForm"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/duarationTextViewStatementForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Mode"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <Spinner
+                        android:id="@+id/payment_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:background="@drawable/edit_text_border"
+                        android:prompt="@string/spinner_prompt"
+                        android:spinnerMode="dropdown"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:text="Download"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/greenButton"/>
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

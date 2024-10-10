@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/quickHitsIcon"
+        android:icon="@drawable/quick_hits"
+        android:title="Quick Hits"/>
+
+    <item
+        android:id="@+id/chartsIcon"
+        android:icon="@drawable/chart_icon"
+        android:title="Charts"/>
+
+    <item
+        android:id="@+id/statementsIcon"
+        android:icon="@drawable/statements_icon"
+        android:title="Statements"/>
+
+    <item
+        android:id="@+id/profileIcon"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile"/>
+  
+</menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@color/bgBlack"
+    android:id="@+id/toolbar_actionbar">
+
+    <RelativeLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_alignParentStart="true"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:src="@drawable/menu_icon"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_marginVertical="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Menu"
+
+            android:padding="4dp"
+            />
+
+
+        <ImageButton
+            android:id="@+id/calendarButton"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_alignStart="@id/menuButton"
+            android:layout_marginVertical="11dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginEnd="11dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="calendar"
+            android:padding="4dp"
+            android:src="@drawable/calendar_icon" />
+
+        <ImageButton
+            android:id="@+id/notification"
+            android:layout_alignParentEnd="true"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_margin="11dp"
+            android:layout_gravity="end|bottom"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="notification"
+            android:padding="4dp"
+            android:src="@drawable/notification_icon" />
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

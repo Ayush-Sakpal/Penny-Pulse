@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuTop"
+        android:title="">
+
+    </item>
+
+    <item
+        android:id="@+id/dashBoard"
+        android:title="Hello, Aayush"/>
+
+
+    <item
+        android:id="@+id/navMyAccount"
+        android:icon="@drawable/my_account_icon"
+        android:title="My Account"/>
+
+    <item
+        android:id="@+id/navSettings"
+        android:icon="@drawable/settings_icon"
+        android:title="Settings"/>
+
+    <item
+        android:id="@+id/navLogout"
+        android:icon="@drawable/logout_icon"
+        android:title="Log Out"/>
+
+</menu>
