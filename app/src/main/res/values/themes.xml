@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PennyPulse" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Base.Theme.PennyPulse" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -15,5 +15,9 @@
     <style name="Theme.PennyPulse.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PennyPulse.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ThemeMaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="android:windowFullscreen">false</item>
+    </style>
 
 </resources>

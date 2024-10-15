@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="11dp">
+                android:layout_marginTop="27dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -52,6 +52,7 @@
                         app:layout_constraintVertical_bias="0.293">
 
                         <LinearLayout
+                            android:paddingBottom="0dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/background_color"
@@ -60,7 +61,7 @@
                             <TextView
                                 android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
-                                android:text="Available Balance"
+                                android:text="Total Expense"
                                 android:textColor="@color/white"
                                 android:textSize="27sp"
                                 android:gravity="start"
@@ -81,65 +82,18 @@
                                 android:layout_marginHorizontal="11dp"
                                 android:layout_marginVertical="4dp"/>
 
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                            <ImageButton
+                                android:paddingBottom="0dp"
+                                android:id="@+id/refreshButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|right"
+                                android:layout_marginBottom="0dp"
+                                android:backgroundTint="@android:color/transparent"
+                                android:contentDescription="refresh"
+                                android:foregroundGravity="right"
+                                android:src="@drawable/refresh" />
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginHorizontal="3dp"
-                                    android:layout_marginVertical="11dp"
-                                    android:layout_alignParentStart="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="35dp"
-                                        android:layout_height="35dp"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/loss_arrow_icon"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="\u20b9 3223"
-                                        android:fontFamily="@font/montserratregular"
-                                        android:textColor="@color/white"
-                                        android:textSize="21dp"
-                                        android:textStyle="bold"
-                                        android:layout_gravity="center"/>
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginHorizontal="11dp"
-                                    android:layout_marginVertical="11dp"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_alignParentBottom="true"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="35dp"
-                                        android:layout_height="35dp"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/gain_arrow_icon"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="\u20b9 11000"
-                                        android:fontFamily="@font/montserratregular"
-                                        android:textColor="@color/white"
-                                        android:textSize="21dp"
-                                        android:textStyle="bold"
-                                        android:layout_gravity="center"/>
-
-                                </LinearLayout>
-
-                            </RelativeLayout>
 
                         </LinearLayout>
 
@@ -194,9 +148,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/recentTransTextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
@@ -210,22 +165,19 @@
                         android:textColor="@color/white"
                         android:textSize="21sp" />
 
-                    <ImageButton
-                        android:layout_width="49dp"
-                        android:layout_height="49dp"
-                        android:backgroundTint="@color/bgBlack"
-                        android:src="@drawable/refresh"
-                        android:foregroundGravity="right"
+                    <ListView
+                        android:layout_marginVertical="11dp"
+                        android:layout_width="match_parent"
+                        android:id="@+id/recentTransList"
+                        android:layout_height="wrap_content"
+                        android:divider="@color/white"
+                        android:layout_below="@id/recentTransTextView"
+                        android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        android:contentDescription="refresh"/>
+                        />
 
                 </RelativeLayout>
 
-                <ListView
-                    android:layout_width="match_parent"
-                    android:id="@+id/recentTransList"
-                    android:layout_height="wrap_content"
-                    android:divider="@color/white"/>
 
             </LinearLayout>
 

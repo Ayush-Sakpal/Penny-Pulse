@@ -12,12 +12,15 @@ import android.widget.ImageButton
 import android.widget.MultiAutoCompleteTextView
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.util.Pair
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.datepicker.MaterialDatePicker.Builder
 import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Locale
+import java.util.TimeZone
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,9 +60,26 @@ class StatementFragment : Fragment() {
 
         super.onViewCreated(view, savedInstanceState)
 
-        selectedDate = view.findViewById(R.id.durationTextViewStatementForm)
+        selectedDate = view.findViewById(R.id.durationEditTextStatementForm)
         var datePickerButton: ImageButton = view.findViewById(R.id.durationPickerButton)
-        datePickerButton.setOnClickListener{datePickerDialog()}
+
+        datePickerButton.setOnClickListener{
+            val picker = MaterialDatePicker.Builder.dateRangePicker()
+                .setTheme(R.style.ThemeMaterialCalendar)
+                .setTitleText("Select Date range")
+                .setSelection(Pair(null, null))
+                .build()
+
+            picker.show(requireActivity().supportFragmentManager, "TAG")
+
+            picker.addOnPositiveButtonClickListener {
+                selectedDate.setText(convertTimeToDate(it.first) + " - " + convertTimeToDate(it.second))
+            }
+
+            picker.addOnNegativeButtonClickListener {
+                picker.dismiss()
+            }
+        }
 
         val paymentModeSpinner = requireView().findViewById<Spinner>(R.id.payment_spinner)
         val paymentModes = resources.getStringArray(R.array.payment_modes)
@@ -88,30 +108,11 @@ class StatementFragment : Fragment() {
             }
         }
 
+
+
+
+
     }
-
-    fun datePickerDialog(){
-        val builder = MaterialDatePicker.Builder.dateRangePicker()
-        builder.setTitleText("Select a date range")
-
-        val datePicker = builder.build()
-        datePicker.addOnPositiveButtonClickListener { selection ->
-
-            val startDate = selection.first
-            val endDate = selection.second
-
-            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-            val startingDate = sdf.format(startDate)
-            val endingDate = sdf.format(endDate)
-
-            val selectedDateRange = "$startingDate - $endingDate"
-
-            selectedDate.text = selectedDateRange
-
-        }
-    }
-
-
 
     companion object {
         /**
@@ -131,5 +132,12 @@ class StatementFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    private fun convertTimeToDate(time: Long): String{
+        val  utc = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        utc.timeInMillis = time
+        val format = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        return format.format(utc.time)
     }
 }

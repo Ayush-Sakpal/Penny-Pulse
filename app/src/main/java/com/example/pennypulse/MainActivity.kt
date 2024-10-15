@@ -21,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     lateinit var myActionBar: androidx.appcompat.widget.Toolbar
-    lateinit var calendarButton: ImageButton
     lateinit var bottomNavigationBar: BottomNavigationView
     lateinit var quickHitsFragment: QuickHitsFragment
     lateinit var chartsFragment: ChartsFragment
@@ -52,11 +51,6 @@ class MainActivity : AppCompatActivity() {
         actionBarToogle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.menu_icon)
-
-        calendarButton = findViewById(R.id.calendarButton)
-        calendarButton.setOnClickListener{
-            loadFragment(TransactionsFragment())
-        }
 
         bottomNavigationBar = findViewById(R.id.bottomNavigationView)
         bottomNavigationBar.selectedItemId = R.id.quickHitsIcon

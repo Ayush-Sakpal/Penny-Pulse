@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/penny_pulse_logo"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/penny_pulse_logo"
+        android:icon="@drawable/penny_pulse_logo_original"
+        android:label="Penny Pulse"
+        android:roundIcon="@drawable/penny_pulse_logo_original"
         android:supportsRtl="true"
         android:theme="@style/Theme.PennyPulse"
         tools:targetApi="31">

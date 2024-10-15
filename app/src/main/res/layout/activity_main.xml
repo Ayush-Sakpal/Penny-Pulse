@@ -14,27 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/grey"
-        android:fitsSystemWindows="true">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <include
-                android:id="@+id/include_nav_header"
-                layout="@layout/nav_header" />
-
-            <include
-                android:id="@+id/include_nav_content"
-                layout="@layout/nav_content" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </com.google.android.material.navigation.NavigationView>
+        android:background="@color/white"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/on_click_menu"
+        android:fitsSystemWindows="true"/>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -74,8 +57,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hello! Aayush"
-                    android:textSize="27dp"
+                    android:textSize="21dp"
                     android:textAlignment="gravity"
+                    android:gravity="center_vertical"
                     android:fontFamily="@font/montserratregular"
                     android:textStyle="bold"
                     android:textColor="@color/white"
