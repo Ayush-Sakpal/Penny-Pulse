@@ -131,7 +131,7 @@
                         android:fontFamily="@font/montserratregular"/>
 
                     <Spinner
-                        android:id="@+id/payment_spinner"
+                        android:id="@+id/transactionTypeSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="49dp"
                         android:background="@drawable/edit_text_border"
@@ -145,13 +145,15 @@
         </androidx.cardview.widget.CardView>
 
         <Button
+            android:id="@+id/Download"
+            style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="21dp"
+            android:backgroundTint="@color/greenButton"
             android:text="Download"
-            android:textSize="14dp"
             android:textColor="@color/white"
-            android:backgroundTint="@color/greenButton"/>
+            android:textSize="14dp" />
 
 
 

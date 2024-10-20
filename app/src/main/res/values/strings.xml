@@ -15,13 +15,13 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    
-    <string name="spinner_prompt">Select Payment Mode</string>
 
-    <string-array name="payment_modes">
-        <item>UPI</item>
-        <item>Credit card</item>
-        <item>Debit card</item>
-        <item>Net Banking</item>
+    <string name="spinner_prompt">Select Transaction Type</string> <!-- Updated prompt -->
+
+    <string-array name="transaction_types"> <!-- Updated array name -->
+        <item>Debited</item>
+        <item>Credited</item>
+        <item>Both</item>
+
     </string-array>
 </resources>

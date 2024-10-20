@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/drawer_layout"
-        android:background="@color/bgBlack"
-        >
+        android:background="@color/bgBlack">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
@@ -40,7 +39,7 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/scrollableCards1"
-                        android:layout_width="380dp"
+                        android:layout_width="366dp"
                         android:layout_height="200dp"
                         android:layout_marginHorizontal="20dp"
                         app:cardCornerRadius="11dp"
@@ -52,38 +51,38 @@
                         app:layout_constraintVertical_bias="0.293">
 
                         <LinearLayout
-                            android:paddingBottom="0dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/background_color"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:paddingBottom="0dp">
 
                             <TextView
-                                android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
-                                android:text="Total Expense"
-                                android:textColor="@color/white"
-                                android:textSize="27sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="11dp"
+                                android:layout_marginVertical="4dp"
+                                android:fontFamily="@font/montserratregular"
                                 android:gravity="start"
-                                android:fontFamily="@font/montserratregular"
-                                android:layout_marginHorizontal="11dp"
-                                android:layout_marginVertical="4dp"/>
+                                android:text="This Month's Expense"
+                                android:textColor="@color/white"
+                                android:textSize="27sp" />
 
                             <TextView
-                                android:layout_marginTop="150dp"
-                                android:layout_height="wrap_content"
+                                android:id="@+id/tExpense"
                                 android:layout_width="wrap_content"
-                                android:text="\u20b9 7777"
-                                android:textSize="70dp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white"
+                                android:layout_height="78dp"
                                 android:layout_gravity="bottom|center"
-                                android:fontFamily="@font/montserratregular"
                                 android:layout_marginHorizontal="11dp"
-                                android:layout_marginVertical="4dp"/>
+                                android:layout_marginVertical="4dp"
+                                android:layout_marginTop="150dp"
+                                android:fontFamily="@font/montserratregular"
+                                android:text="\u20b9 7777"
+                                android:textColor="@color/white"
+                                android:textSize="70dp"
+                                android:textStyle="bold" />
 
                             <ImageButton
-                                android:paddingBottom="0dp"
                                 android:id="@+id/refreshButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -92,13 +91,13 @@
                                 android:backgroundTint="@android:color/transparent"
                                 android:contentDescription="refresh"
                                 android:foregroundGravity="right"
+                                android:paddingBottom="0dp"
                                 android:src="@drawable/refresh" />
 
 
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
-
 
 
                     <androidx.cardview.widget.CardView
@@ -113,8 +112,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.293"
-                        />
+                        app:layout_constraintVertical_bias="0.293" />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/scrollableCards3"
@@ -128,8 +126,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.293"
-                        />
+                        app:layout_constraintVertical_bias="0.293" />
 
                 </LinearLayout>
 
@@ -166,15 +163,17 @@
                         android:textSize="21sp" />
 
                     <ListView
-                        android:layout_marginVertical="11dp"
-                        android:layout_width="match_parent"
                         android:id="@+id/recentTransList"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:divider="@color/white"
                         android:layout_below="@id/recentTransTextView"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
-                        />
+                        android:layout_marginVertical="11dp"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="236dp"
+                        android:layout_marginEnd="-11dp"
+                        android:divider="@color/white" />
 
                 </RelativeLayout>
 
@@ -184,7 +183,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.drawerlayout.widget.DrawerLayout>
-
 
 
 </FrameLayout>

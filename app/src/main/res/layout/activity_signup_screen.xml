@@ -40,21 +40,21 @@
         app:layout_constraintTop_toBottomOf="@id/signupTitle" />
 
     <EditText
+        android:id="@+id/signupNameEditText"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:id="@+id/signupNameEditText"
-        android:hint="Name"
-        android:textColor="@color/white"
-        android:textColorHint="@color/grey"
-        android:inputType="textPersonName"
+        android:layout_margin="40dp"
         android:drawableStart="@drawable/name_icon"
         android:drawablePadding="7dp"
         android:drawableTint="@color/grey"
         android:fontFamily="@font/montserratregular"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signupSubTitle"
-        android:layout_margin="40dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signupSubTitle" />
 
     <EditText
         android:layout_width="match_parent"
