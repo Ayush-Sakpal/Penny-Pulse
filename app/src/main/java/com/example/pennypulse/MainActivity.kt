@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var drawerLayout: DrawerLayout
     lateinit var actionBarToogle: ActionBarDrawerToggle
     lateinit var floatingButton: FloatingActionButton
+    lateinit var slideNavView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +60,28 @@ class MainActivity : AppCompatActivity() {
         actionBarToogle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.menu_icon)
+
+        slideNavView = findViewById(R.id.slideNavView)
+
+        slideNavView.setNavigationItemSelectedListener (NavigationView.OnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.navMyAccount -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+                R.id.navFeedback -> {
+                    loadFragment(StatementFragment())
+                    true
+                }
+                R.id.navLogout -> {
+                    val intent = Intent(this, LoginScreen::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> {false}
+            }
+        });
 
         bottomNavigationBar = findViewById(R.id.bottomNavigationView)
         bottomNavigationBar.selectedItemId = R.id.quickHitsIcon

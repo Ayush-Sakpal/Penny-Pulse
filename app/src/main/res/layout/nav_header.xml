@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_alignParentStart="true"
     android:orientation="vertical"
+    android:layout_marginTop="21dp"
     android:layout_width="match_parent"
+    android:background="@android:color/transparent"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="120dp"
         android:layout_height="120dp"
         app:cardCornerRadius="60dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="start"
+        android:layout_marginStart="21dp"
         android:elevation="135dp"
         android:layout_marginTop="35dp">
 
@@ -18,20 +21,28 @@
             android:id="@+id/profilePic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/profile_pic"
             android:scaleType="centerCrop"/>
 
     </androidx.cardview.widget.CardView>
 
 
     <TextView
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="21dp"
-        android:textAlignment="center"
-        android:text="Hello, Aayush!"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="11dp"
+        android:text="Aayush Sakpal"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserratregular"
         android:textColor="@color/bgBlack"
         android:textSize="21dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"/>
 
 </LinearLayout>
