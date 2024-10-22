@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:excludeFromRecents="true"
+    android:background="@android:color/transparent"
+    tools:context=".ManualAdd">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/manualAddTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="17dp"
+            android:text="Add Transaction"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:fontFamily="@font/montserratregular"
+            android:textSize="27dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/statementFormCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginVertical="27dp"
+
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="11dp"
+            android:elevation="27dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="17dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/titleTextViewManualAddForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Title*"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <EditText
+                        android:id="@+id/titleEditTextStatementForm"
+                        android:padding="11dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textSize="14dp"
+                        android:hint="Enter title"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_text_border"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/amountTextViewManualAddForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount*"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <EditText
+                        android:id="@+id/amountEditTextStatementForm"
+                        android:padding="11dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textSize="14dp"
+                        android:hint="Enter amount"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_text_border"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        >
+
+                        <LinearLayout
+                            android:layout_alignParentStart="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="11dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dateTextViewManualAddForm"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date*"
+                                android:textSize="14dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratregular"/>
+
+                            <TextView
+                                android:layout_alignParentStart="true"
+                                android:id="@+id/dateEditTextStatementForm"
+                                android:padding="11dp"
+                                android:layout_width="130dp"
+                                android:layout_height="49dp"
+                                android:text="Select Date"
+                                android:fontFamily="@font/montserratregular"
+                                android:textSize="14dp"
+                                android:inputType="date"
+                                android:textColor="@color/black"
+                                android:background="@drawable/edit_text_border"
+                                android:clickable="true"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="11dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/timeTextViewManualAddForm"
+                                android:layout_marginBottom="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time*"
+                                android:textSize="14dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratregular"/>
+
+                            <TextView
+                                android:layout_alignParentEnd="true"
+                                android:id="@+id/timeEditTextStatementForm"
+                                android:padding="11dp"
+                                android:layout_width="130dp"
+                                android:layout_height="49dp"
+                                android:text="Select Time"
+                                android:fontFamily="@font/montserratregular"
+                                android:textSize="14dp"
+                                android:textColor="@color/black"
+                                android:inputType="date"
+                                android:background="@drawable/edit_text_border"/>
+
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="11dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/duarationTextViewStatementForm"
+                        android:layout_marginBottom="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Mode"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratregular"/>
+
+                    <Spinner
+                        android:id="@+id/man_add_payment_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="49dp"
+                        android:background="@drawable/edit_text_border"
+                        android:prompt="@string/spinner_prompt"
+                        android:spinnerMode="dropdown"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_alignParentStart="true"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="21dp"
+                android:text="Cancel"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@android:color/holo_red_light"/>
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_alignParentEnd="true"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="21dp"
+                android:text="Add"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/greenButton"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
