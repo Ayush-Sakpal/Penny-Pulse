@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_alignParentStart="true"
     android:orientation="vertical"
-    android:layout_marginTop="21dp"
     android:layout_width="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@color/darkerGreenButton"
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
@@ -15,13 +14,15 @@
         android:layout_gravity="start"
         android:layout_marginStart="21dp"
         android:elevation="135dp"
-        android:layout_marginTop="35dp">
+        app:cardElevation="240dp"
+        android:layout_marginTop="55dp">
 
         <ImageView
             android:id="@+id/profilePic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/profile_pic"
+            android:elevation="240dp"
             android:scaleType="centerCrop"/>
 
     </androidx.cardview.widget.CardView>
@@ -37,7 +38,7 @@
         android:text="Aayush Sakpal"
         android:textStyle="bold"
         android:fontFamily="@font/montserratregular"
-        android:textColor="@color/bgBlack"
+        android:textColor="@color/white"
         android:textSize="21dp"/>
 
     <View

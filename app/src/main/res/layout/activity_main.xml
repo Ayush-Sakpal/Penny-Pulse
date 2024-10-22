@@ -14,7 +14,7 @@
         android:clickable="true"
         app:elevation="40dp"
         android:id="@+id/slideNavView"
-        android:backgroundTint="@color/greenButton"
+        android:backgroundTint="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -22,6 +22,7 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/on_click_menu"
         android:contextClickable="true"
+        app:itemIconSize="30dp"
         android:fitsSystemWindows="true"/>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,7 +36,7 @@
             android:id="@+id/addFloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/greenButton"
             android:src="@drawable/add_icon"
             android:contentDescription="floatingbutton"
             android:foregroundGravity="center"

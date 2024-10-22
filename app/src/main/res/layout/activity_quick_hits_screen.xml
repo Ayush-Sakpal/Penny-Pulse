@@ -370,7 +370,11 @@
             android:layout_width="match_parent"
             android:id="@+id/recentTransList"
             android:layout_height="wrap_content"
-            android:divider="@color/white"/>
+            android:divider="@color/white">
+
+
+
+        </ListView>
 
 
     </LinearLayout>

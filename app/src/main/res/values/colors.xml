@@ -7,5 +7,6 @@
     <color name="blue">#4789CE</color>
     <color name="grey">#B1B1B1</color>
     <color name="greenButton">#00c9b7</color>
+    <color name="darkerGreenButton">#019184</color>
     <color name="bgBlack">#252525</color>
 </resources>

@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +29,14 @@ class QuickHitsFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+        var recTransItems: Array<RecentTrans> = arrayOf()
+
+        var rectransListView = view?.findViewById<ListView>(R.id.recentTransList)
+
+        //var recTransAdapter = ArrayAdapter<RecentTrans>(activity, R.layout.recent_trans_list_item, R.id.recTransAmt, recTransItems)
+
+        //rectransListView?.adapter = recTransAdapter
     }
 
     override fun onCreateView(
