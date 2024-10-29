@@ -1,33 +1,22 @@
 package com.example.pennypulse
-
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
+import com.auth0.android.jwt.JWT
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var userName: String? = null
+    private var userToken: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            userName = it.getString(ARG_NAME)
+            userToken = it.getString(ARG_TOKEN)
         }
     }
 
@@ -36,25 +25,34 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        // Find the TextView for the name and set it
+        val nameTextView: TextView = view.findViewById(R.id.nameTextView)
+        nameTextView.text = userName
+        val user: TextView = view.findViewById(R.id.userIdTextView)
+        val temp= userToken?.let {
+            JWT(it).getClaim("userId").asString()?.toIntOrNull()
+        }.toString()
+        user.text= temp.replaceFirstChar { char -> char.uppercase() }
+        val email: TextView = view.findViewById(R.id.emailAddressTextView)
+        email.text = userToken?.let {
+            JWT(it).getClaim("email").asString()
+        }.toString()
+
+        return view
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+        private const val ARG_NAME = "name"
+        private const val ARG_TOKEN = "token"
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(name: String, token: String) =
             ProfileFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_NAME, name)
+                    putString(ARG_TOKEN, token)
                 }
             }
     }

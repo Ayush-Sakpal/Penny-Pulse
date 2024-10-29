@@ -16,12 +16,20 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+
+
     <string name="spinner_prompt">Select Transaction Type</string> <!-- Updated prompt -->
 
     <string-array name="transaction_types"> <!-- Updated array name -->
         <item>Debited</item>
         <item>Credited</item>
         <item>Both</item>
+
+    </string-array>
+    <string-array name="T_types"> <!-- Updated array name -->
+        <item>Debited</item>
+        <item>Credited</item>
+
 
     </string-array>
 </resources>

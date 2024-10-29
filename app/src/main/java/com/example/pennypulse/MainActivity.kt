@@ -1,4 +1,5 @@
 package com.example.pennypulse
+import android.content.Intent
 import androidx.fragment.app.Fragment
 
 import android.os.Bundle
@@ -19,6 +20,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.example.pennypulse.network.ApiService
 import com.example.pennypulse.network.UserDetailsResponse
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.auth0.android.jwt.JWT
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +31,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarToggle: ActionBarDrawerToggle
     private lateinit var appBarName: TextView
+    lateinit var floatingButton: FloatingActionButton
+    lateinit var slideNavView: NavigationView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,17 +63,39 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationBar = findViewById(R.id.bottomNavigationView)
         bottomNavigationBar.selectedItemId = R.id.quickHitsIcon
+        slideNavView = findViewById(R.id.slideNavView)
+
+        slideNavView.setNavigationItemSelectedListener (NavigationView.OnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.navMyAccount -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+                R.id.navFeedback -> {
+                    loadFragment(StatementFragment())
+                    true
+                }
+                R.id.navLogout -> {
+                    val intent = Intent(this, LoginScreen::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> {false}
+            }
+        });
 
         bottomNavigationBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.quickHitsIcon -> {
                     val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
                     val totalExpense = sharedPreferences.getString("expense", null)
-                    loadFragment(QuickHitsFragment.newInstance(totalExpense?.toDouble() ?: 0.0)) // Placeholder for user name and expense
+                    val totalCredit = sharedPreferences.getString("credit", null)
+                    loadFragment(QuickHitsFragment.newInstance(totalExpense?.toDouble() ?: 0.0,totalCredit?.toDouble() ?: 0.0,token!!)) // Placeholder for user name and expense
                     true
                 }
                 R.id.chartsIcon -> {
-                    loadFragment(ChartsFragment())
+                    loadFragment(ChartsFragment.newInstance(token!!)) // Placeholder for user name and expens
                     true
                 }
                 R.id.statementsIcon -> {
@@ -76,13 +104,28 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.profileIcon -> {
-                    loadFragment(ProfileFragment())
+                    val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                    val name = sharedPreferences.getString("name", null)
+                    loadFragment(ProfileFragment.newInstance(name!!,token!!))
                     true
                 }
                 else -> {
                     throw IllegalStateException("Fragment is not correct")
                 }
             }
+
+        }
+        val userId = token?.let {
+            JWT(it).getClaim("userId").asString()?.toIntOrNull()
+        }
+
+
+        floatingButton = findViewById(R.id.addFloatingActionButton)
+
+        floatingButton.setOnClickListener{
+            val intent = Intent(applicationContext, ManualAdd::class.java)
+            intent.putExtra("EXTRA_USER_ID", userId.toString()) // Pass userId to ManualAdd activity
+            startActivity(intent)
         }
     }
 
@@ -90,6 +133,21 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         with(sharedPreferences.edit()) {
             putString("expense", expense)
+            apply()
+        }
+    }
+    private fun saveCredit(credit: String) {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        with(sharedPreferences.edit()) {
+            putString("credit", credit)
+            apply()
+        }
+    }
+    private fun saveName(name: String) {
+        val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
+        with(sharedPreferences.edit()) {
+
+            putString("name", name)
             apply()
         }
     }
@@ -114,7 +172,11 @@ class MainActivity : AppCompatActivity() {
 
                         // Update the QuickHitsFragment with user name and total expense
                         saveExpense(it.totalExpense.toString())
-                        val quickHitsFragment = QuickHitsFragment.newInstance(it.totalExpense)
+                        saveCredit(it.totalCredit.toString())
+                        saveName(it.name)
+                        val quickHitsFragment = QuickHitsFragment.newInstance(it.totalExpense,it.totalCredit,
+                            token
+                        )
                         loadFragment(quickHitsFragment)
                     }
                 } else {

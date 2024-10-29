@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ChartsFragment">
+    android:layout_height="700dp"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Header for the Weekly Report -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Charts Fragmant"
-        android:gravity="center"
-        android:textColor="@color/greenButton"
-        android:textSize="42dp"/>
+        android:id="@+id/weeklyReportTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
-</FrameLayout>
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/montserratregular"
+        android:text="Your Weekly Report"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <!-- Bar Chart for Weekly Expenses -->
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent" />
+
+    <!-- Average Weekly Expense -->
+    <TextView
+        android:id="@+id/tvTotalExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Average Expense This Week: $0"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <!-- Suggestions Card -->
+
+    <!-- No Data Text View -->
+
+
+    <TextView
+        android:id="@+id/noDataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="No expenses recorded this week."
+        android:textColor="@color/grey"
+        android:visibility="gone" />
+
+    <!-- Tips Container -->
+    <LinearLayout
+        android:id="@+id/tipsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical">
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="36dp" /> <!-- This creates additional space -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="36dp" /> <!-- This creates additional space -->
+    </LinearLayout>
+
+
+</LinearLayout>

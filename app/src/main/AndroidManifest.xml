@@ -26,6 +26,10 @@
     android:usesCleartextTraffic="true">
 
 
+                <activity
+        android:name=".ManualAdd"
+        android:theme="@style/CustomDialogTheme"
+        android:exported="false" />
         <activity
             android:name=".TransactionsScreen"
             android:exported="false" />
@@ -56,6 +60,7 @@
             android:name=".MainActivity"
             android:exported="false" />
     </application>
+
 
 
 </manifest>

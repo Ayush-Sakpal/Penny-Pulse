@@ -56,5 +56,6 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp)
     implementation(libs.jwtdecode)
+    implementation(libs.mpandroidchart)
 }
 

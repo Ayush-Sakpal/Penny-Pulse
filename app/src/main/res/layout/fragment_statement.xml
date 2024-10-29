@@ -16,7 +16,8 @@
             android:id="@+id/downloadStatementTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="17dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginBottom="1000dp"
             android:text="Download Statement"
             android:textColor="@color/white"
             android:textAlignment="center"
@@ -39,8 +40,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="17dp"
-                android:orientation="vertical">
+                android:layout_marginBottom="20dp"
+                android:background="#E5EBEB"
+                android:orientation="vertical"
+                android:padding="20dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -50,22 +54,23 @@
 
                     <TextView
                         android:id="@+id/emailTextViewStatementForm"
-                        android:layout_marginBottom="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/montserratregular"
                         android:text="Email Address*"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"/>
+                        android:textColor="#00C8B6"
+                        android:textSize="14dp" />
 
                     <EditText
                         android:id="@+id/emailEditTextStatementForm"
-                        android:padding="11dp"
                         android:layout_width="match_parent"
                         android:layout_height="49dp"
+                        android:background="@drawable/edit_text_border"
                         android:fontFamily="@font/montserratregular"
-                        android:textSize="14dp"
                         android:inputType="textEmailAddress"
-                        android:background="@drawable/edit_text_border"/>
+                        android:padding="11dp"
+                        android:textSize="14dp" />
 
                 </LinearLayout>
 
@@ -77,12 +82,13 @@
 
                     <TextView
                         android:id="@+id/durationTextViewStatementForm"
-                        android:layout_marginBottom="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/montserratregular"
                         android:text="Duration"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"/>
+                        android:textColor="#00C8B6"
+                        android:textSize="14dp" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -91,25 +97,29 @@
 
                         <TextView
                             android:id="@+id/durationEditTextStatementForm"
-                            android:padding="11dp"
-                            android:layout_width="270dp"
-                            android:layout_height="49dp"
-                            android:text="Selected Date"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edit_text_border"
                             android:fontFamily="@font/montserratregular"
-                            android:textSize="14dp"
                             android:inputType="date"
-                            android:background="@drawable/edit_text_border"/>
+                            android:padding="11dp"
+                            android:text="Selected Date"
+                            android:textSize="14dp" />
 
                         <ImageButton
                             android:id="@+id/durationPickerButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@android:color/transparent"
-                            android:src="@drawable/datepicker_button_icon"
+                            android:layout_alignParentTop="true"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentBottom="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_toEndOf="@id/durationEditTextStatementForm"/>
+                            android:layout_marginStart="-52dp"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginEnd="30dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_toEndOf="@id/durationEditTextStatementForm"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/datepicker_button_icon" />
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -123,12 +133,13 @@
 
                     <TextView
                         android:id="@+id/duarationTextViewStatementForm"
-                        android:layout_marginBottom="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Payment Mode"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"/>
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:text="Payment Type"
+                        android:textColor="#00C8B6"
+                        android:textSize="14dp" />
 
                     <Spinner
                         android:id="@+id/transactionTypeSpinner"
@@ -136,7 +147,8 @@
                         android:layout_height="49dp"
                         android:background="@drawable/edit_text_border"
                         android:prompt="@string/spinner_prompt"
-                        android:spinnerMode="dropdown"/>
+                        android:spinnerMode="dropdown" />
+
 
                 </LinearLayout>
 

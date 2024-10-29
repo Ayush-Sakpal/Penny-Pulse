@@ -20,4 +20,13 @@
         <item name="android:windowFullscreen">false</item>
     </style>
 
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item><!-- Set width to 90% of the screen -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- Background color -->
+        <item name="windowActionBar">false</item>
+        <!-- Customize other items as needed -->
+    </style>
+
 </resources>
