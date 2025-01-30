@@ -1,5 +1,6 @@
 package com.example.pennypulse.network
 
 data class SignupResponse(
-    val message: String
+    val otp:Int,
+    val message:String
 )

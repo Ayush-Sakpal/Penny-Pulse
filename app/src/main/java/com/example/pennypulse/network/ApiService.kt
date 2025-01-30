@@ -12,7 +12,10 @@ interface ApiService {
     suspend fun loginUser(@Body loginRequest: LoginRequest): Response<LoginResponse>
 
     @POST("signup") // Adjust the endpoint as per your server setup
-    suspend fun signupUser(@Body request: SignupRequest): Response<Unit>
+    suspend fun signupUser(@Body request: SignupRequest): Response<SignupResponse>
+
+    @POST("reg") // Adjust the endpoint as per your server setup
+    suspend fun registerUser(@Body request: SignupRequest): Response<RegisterResponse>
 
     @POST("sms") // Update with your actual endpoint
     suspend fun sendSms(@Body smsBody: SmsData): Response<Any>

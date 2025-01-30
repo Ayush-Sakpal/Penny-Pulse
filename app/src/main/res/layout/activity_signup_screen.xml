@@ -20,7 +20,6 @@
         android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +34,6 @@
         android:textColor="@color/grey"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signupTitle" />
 
@@ -57,9 +55,9 @@
         app:layout_constraintTop_toBottomOf="@id/signupSubTitle" />
 
     <EditText
+        android:id="@+id/signupEmailEditText"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:id="@+id/signupEmailEditText"
         android:hint="Email"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
@@ -74,9 +72,9 @@
         android:layout_margin="40dp"/>
 
     <EditText
+        android:id="@+id/signupPasswordEditText"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:id="@+id/signupPasswordEditText"
         android:hint="Password"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
@@ -90,6 +88,23 @@
         app:layout_constraintTop_toBottomOf="@id/signupEmailEditText"
         android:layout_margin="40dp"/>
 
+    <EditText
+        android:id="@+id/signupConfirmPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Confirm Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
+        android:inputType="textPassword"
+        android:drawablePadding="7dp"
+        android:drawableStart="@drawable/password_icon"
+        android:drawableTint="@color/grey"
+        android:fontFamily="@font/montserratregular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signupPasswordEditText"
+        android:layout_margin="40dp"/>
+
     <Button
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
@@ -101,16 +116,45 @@
         android:backgroundTint="@color/greenButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signupPasswordEditText"/>
+        app:layout_constraintTop_toBottomOf="@id/signupConfirmPasswordEditText"/>
 
-    <LinearLayout android:layout_width="wrap_content"
+    <!-- OTP Section -->
+    <EditText
+        android:id="@+id/otpEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Enter OTP"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
+        android:inputType="number"
+        android:fontFamily="@font/montserratregular"
+        android:visibility="gone"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/signupButton"
+    android:layout_margin="40dp"/>
+
+    <Button
+        android:id="@+id/verifyOtpButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify OTP"
+        android:textColor="@color/darkBlue"
+        android:fontFamily="@font/montserratregular"
+        android:layout_margin="40dp"
+        android:backgroundTint="@color/greenButton"
+        android:visibility="gone"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/otpEditText"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
-
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,11 +178,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:fontFamily="@font/montserratregular"
-            />
-
+            android:fontFamily="@font/montserratregular"/>
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
